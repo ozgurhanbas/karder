@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="top" class="bg-gray-900 text-white">
+  <!-- Slaytlı Arka Plan ve Üst Menü -->
+  <div id="slideshow" class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1000" style="background-image: url('Fotograflar/trabzon.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+
+    <header class="relative z-10" role="banner">
+      <div class="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-4 gap-4 md:gap-6">
+        <!-- Logo ve Başlık -->
+        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
+          <img src="Fotograflar/Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="60" class="flex-shrink-0 w-12 md:w-[75px]" />
+          <div class="text-center sm:text-left min-w-0">
+            <h1 class="text-lg md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
+            <p class="text-xs md:text-lg lg:text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px] md:max-w-xs lg:max-w-md">
+              KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ
+            </p>
+          </div>
+        </div>
+
+        <!-- Hamburger Menü (Mobil) -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-white focus:outline-none" aria-label="Menüyü Aç/Kapat">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menü -->
+        <nav class="hidden md:flex text-lg md:text-xl font-medium flex-wrap gap-x-8 md:gap-x-14 gap-y-2" role="navigation" aria-label="Ana Menü">
+          <a href="index.html" class="hover:underline">ANA SAYFA</a>
+          <div class="relative group" tabindex="0" aria-haspopup="true" aria-expanded="false"
+            onfocus="this.setAttribute('aria-expanded','true')" onblur="this.setAttribute('aria-expanded','false')">
+            <button class="hover:underline flex items-center space-x-1" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>DERNEĞİMİZ</span>
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-44 md:w-48 bg-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 z-20 invisible group-hover:visible pointer-events-auto"
+              role="menu" aria-label="Derneğimiz alt menüsü">
+              <a href="hakkimizda.html" class="block px-4 py-2 hover:bg-gray-700" role="menuitem" tabindex="-1">Hakkımızda</a>
+              <a href="yonetim.html" class="block px-4 py-2 hover:bg-gray-700" role="menuitem" tabindex="-1">Yönetim Kadrosu</a>
+            </div>
+          </div>
+          <a href="haberler.html" class="hover:underline">HABERLER/DUYURULAR</a>
+          <a href="etkinlikler.html" class="hover:underline">ETKİNLİKLERİMİZ</a>
+          <div class="relative group" tabindex="0" aria-haspopup="true" aria-expanded="false"
+            onfocus="this.setAttribute('aria-expanded','true')" onblur="this.setAttribute('aria-expanded','false')">
+            <button class="hover:underline flex items-center space-x-1" type="button" aria-haspopup="true" aria-expanded="false">
+              <span>GALERİLER</span>
+              <svg class="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-36 md:w-40 bg-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-200 z-20 invisible group-hover:visible pointer-events-auto"
+              role="menu" aria-label="Galeriler alt menüsü">
+              <a href="resim-galerisi.html" class="block px-4 py-2 hover:bg-gray-700" role="menuitem" tabindex="-1">Resim Galerisi</a>
+              <a href="video-galerisi.html" class="block px-4 py-2 hover:bg-gray-700" role="menuitem" tabindex="-1">Video Galerisi</a>
+            </div>
+          </div>
+          <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
+        </nav>
+        <!-- Mobil Menü İçeriği -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center text-2xl space-y-8">
+          <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+          <a href="index.html" class="hover:underline">ANA SAYFA</a>
+          <a href="hakkimizda.html" class="hover:underline">Hakkımızda</a>
+          <a href="tarihce.html" class="hover:underline">Tarihçemiz</a>
+          <a href="yonetim.html" class="hover:underline">Yönetim Kadrosu</a>
+          <a href="haberler.html" class="hover:underline">HABERLER/DUYURULAR</a>
+          <a href="etkinlikler.html" class="hover:underline">ETKİNLİKLERİMİZ</a>
+          <a href="resim-galerisi.html" class="hover:underline">Resim Galerisi</a>
+          <a href="video-galerisi.html" class="hover:underline">Video Galerisi</a>
+          <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
+        </div>
+      </header>
+
+      <!-- Butonlar -->
+      <div id="buttons" class="absolute bottom-4 right-4 flex space-x-2 md:bottom-6 md:right-6 md:space-x-3 z-30">
+        <!-- Butonlar JavaScript ile eklenecek -->
+      </div>
+    </div>
+
+  <script>
+    const fotograflar = [
+      "Fotograflar/trabzon.jpg",
+      "Fotograflar/rize.jpg",
+      "Fotograflar/ordu.jpg",
+      "Fotograflar/giresun.jpg",
+      "Fotograflar/kastamonu.jpg",
+      "Fotograflar/samsun.jpg"
+    ];
+
+    let index = 0;
+    const slideshow = document.getElementById("slideshow");
+    const buttonsContainer = document.getElementById("buttons");
+
+    // Butonları oluştur
+    fotograflar.forEach((foto, i) => {
+      const btn = document.createElement("button");
+      btn.className = "w-4 h-4 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition";
+      btn.setAttribute("aria-label", `Fotoğraf ${i + 1} göster`);
+      btn.addEventListener("click", () => {
+        index = i;
+        updateSlide();
+        resetInterval();
+      });
+      buttonsContainer.appendChild(btn);
+    });
+
+    function updateSlide() {
+      slideshow.style.backgroundImage = `url('${fotograflar[index]}')`;
+      // Butonları güncelle (aktif buton koyu)
+      Array.from(buttonsContainer.children).forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add("bg-opacity-100");
+          btn.classList.remove("bg-opacity-60");
+          btn.classList.add("ring", "ring-white");
+        } else {
+          btn.classList.remove("bg-opacity-100", "ring", "ring-white");
+          btn.classList.add("bg-opacity-60");
+        }
+      });
+    }
+
+    updateSlide();
+
+    let interval = setInterval(() => {
+      index = (index + 1) % fotograflar.length;
+      updateSlide();
+    }, 5000);
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(() => {
+        index = (index + 1) % fotograflar.length;
+        updateSlide();
+      }, 5000);
+    }
+
+    // Mobil Menü Açma/Kapama
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+    closeMobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+    // Menüden bir linke tıklanınca menüyü kapat
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+  <!-- Hakkımızda Kısa Özet -->
+  <section class="bg-white w-full py-8">
+    <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Hakkımızda</h2>
+    <div class="bg-blue-50 rounded-lg shadow-lg p-6 max-w-7xl mx-auto">
+      <p class="text-lg text-gray-900 mb-2">
+        Karadenizliler Kültür ve Yardımlaşma Derneği, Karadeniz bölgesinin zengin kültürel mirasını yaşatmak, bu mirası gelecek nesillere aktarmak ve hemşehrilerimiz arasında güçlü bir dayanışma ağı kurmak amacıyla kurulmuş gönüllü bir sivil toplum kuruluşudur. Derneğimiz, Karadeniz’in sadece coğrafi güzelliklerini değil; aynı zamanda insanının mertliğini, misafirperverliğini, çalışkanlığını ve dayanışma duygusunu yaşatmayı görev edinmiştir.
+        <a href="hakkimizda.html" class="text-emerald-800 hover:underline ml-1">...devamı</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Son Haberler Bölümü -->
+  <section class="bg-white w-full p-8">
+    <main class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Son Haberler</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full">
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Dernek Genel Kurulu Yapıldı</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Karadenizliler Kültür ve Yardımlaşma Derneği'nin 2024 yılı genel kurulu yoğun katılımla gerçekleştirildi. Yeni yönetim kurulu seçildi ve gelecek dönem projeleri paylaşıldı.</p>
+            <span class="text-sm text-gray-600 mt-auto">01.06.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Bahar Şenliği Etkinliği</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Her yıl geleneksel olarak düzenlenen Bahar Şenliği bu yıl da coşkuyla kutlandı. Hemşehrilerimiz bir araya gelerek Karadeniz kültürünü yaşattı.</p>
+            <span class="text-sm text-gray-600 mt-auto">15.05.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Ücretsiz Kurslar Başladı</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Derneğimizde çocuklar ve yetişkinler için ücretsiz halk oyunları ve müzik kursları başladı. Katılım için dernek merkezine başvurabilirsiniz.</p>
+            <span class="text-sm text-gray-600 mt-auto">10.04.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Burs Başvuruları Devam Ediyor</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Üniversite öğrencileri için 2024 yılı burs başvuruları alınmaya devam ediyor. Son başvuru tarihi 30 Haziran 2024.</p>
+            <span class="text-sm text-gray-600 mt-auto">01.04.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Karadeniz Gecesi Düzenlendi</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Derneğimizin düzenlediği Karadeniz Gecesi'nde yöresel sanatçılar sahne aldı, katılımcılar horon oynadı.</p>
+            <span class="text-sm text-gray-600 mt-auto">20.03.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Kadınlar Günü Etkinliği</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">8 Mart Dünya Kadınlar Günü'nde dernek merkezimizde kadın üyelerimize özel etkinlikler düzenlendi.</p>
+            <span class="text-sm text-gray-600 mt-auto">08.03.2024</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Etkinliklerimiz Bölümü -->
+  <section class="bg-white w-full p-8">
+    <main class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Etkinliklerimiz</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full">
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Karadeniz Kültür Gecesi</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Karadeniz müziği ve halk oyunlarıyla dolu unutulmaz bir gece düzenlendi.</p>
+            <span class="text-sm text-gray-600 mt-auto">12.05.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Bahar Pikniği</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Üyelerimizle birlikte doğada keyifli bir bahar pikniği gerçekleştirildi.</p>
+            <span class="text-sm text-gray-600 mt-auto">28.04.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Halk Oyunları Gösterisi</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Çocuk ve gençlerimizden oluşan ekiplerimizle halk oyunları gösterisi yapıldı.</p>
+            <span class="text-sm text-gray-600 mt-auto">10.03.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Yöresel Yemek Günü</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Karadeniz mutfağının eşsiz lezzetleri üyelerimizle buluştu.</p>
+            <span class="text-sm text-gray-600 mt-auto">18.02.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Gençlik Buluşması</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Genç üyelerimiz için tanışma ve kaynaşma etkinliği düzenlendi.</p>
+            <span class="text-sm text-gray-600 mt-auto">05.01.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+            <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Yeni Yıl Kutlaması</h3>
+            <p class="text-lg text-gray-900 mb-4 text-center">Dernek merkezimizde coşkulu bir yeni yıl kutlaması yapıldı.</p>
+            <span class="text-sm text-gray-600 mt-auto">31.12.2023</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Etkinliklerimiz Bölümü Sonu -->
+
+  <!-- Resim Galerisi Bölümü -->
+  <section class="bg-white w-full p-8">
+    <main class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Resim Galerisi</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full">
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/trabzon.jpg" alt="Trabzon Etkinliği" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Trabzon Etkinliği</h3>
+            <span class="text-sm text-gray-600">12.05.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/rize.jpg" alt="Rize Buluşması" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Rize Buluşması</h3>
+            <span class="text-sm text-gray-600">28.04.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/ordu.jpg" alt="Ordu Pikniği" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Ordu Pikniği</h3>
+            <span class="text-sm text-gray-600">10.03.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/giresun.jpg" alt="Giresun Gecesi" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Giresun Gecesi</h3>
+            <span class="text-sm text-gray-600">18.02.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/kastamonu.jpg" alt="Kastamonu Tanıtımı" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Kastamonu Tanıtımı</h3>
+            <span class="text-sm text-gray-600">05.01.2024</span>
+          </div>
+          <div class="bg-blue-50 rounded-lg shadow-lg p-4 flex flex-col items-center">
+            <img src="Fotograflar/samsun.jpg" alt="Samsun Etkinliği" class="w-full h-48 object-cover rounded mb-3" />
+            <h3 class="text-3xl font-bold text-emerald-800 mb-1 text-center">Samsun Etkinliği</h3>
+            <span class="text-sm text-gray-600">31.12.2023</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Sosyal Medya Bağlantıları Kutusu -->
+  <section class="bg-white w-full py-8">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Sosyal Medya Hesaplarımız</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-blue-400 font-semibold">
+          <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 00-8.38 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.116 2.823 5.247a4.904 4.904 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 01-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 010 21.543a13.94 13.94 0 007.548 2.209c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.012 10.012 0 0024 4.557z"/></svg>
+          TWiTTER Sayfamız
+        </a>
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-blue-600 font-semibold">
+          <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+          FACEBOOK Grubumuz
+        </a>
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-pink-600 font-semibold">
+          <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.131 4.602.425 3.635 1.392 2.668 2.359 2.374 3.532 2.315 4.809 2.256 6.089 2.243 6.498 2.243 12c0 5.502.013 5.911.072 7.191.059 1.277.353 2.45 1.32 3.417.967.967 2.14 1.261 3.417 1.32C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.277-.059 2.45-.353 3.417-1.32.967-.967 1.261-2.14 1.32-3.417.059-1.28.072-1.689.072-7.191 0-5.502-.013-5.911-.072-7.191-.059-1.277-.353-2.45-1.32-3.417C19.398.425 18.225.131 16.948.072 15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/></svg>
+          INSTAGRAM Sayfamız
+        </a>
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-red-600 font-semibold">
+          <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 00-2.112-2.112C19.645 3.5 12 3.5 12 3.5s-7.645 0-9.386.574A2.994 2.994 0 00.502 6.186C0 7.927 0 12 0 12s0 4.073.502 5.814a2.994 2.994 0 002.112 2.112C4.355 20.5 12 20.5 12 20.5s7.645 0 9.386-.574a2.994 2.994 0 002.112-2.112C24 16.073 24 12 24 12s0-4.073-.502-5.814zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+          YOUTUBE Kanalımız
+        </a>
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-red-400 font-semibold">
+          <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M21.805 10.023c.063.422.095.855.095 1.297 0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10c2.137 0 4.116.672 5.747 1.813l-2.32 2.32c-.98-.66-2.151-1.053-3.427-1.053-3.313 0-6 2.687-6 6 0 1.312.422 2.522 1.133 3.5l2.36-2.36c-.08-.36-.123-.74-.123-1.14 0-2.21 1.79-4 4-4 .4 0 .78.043 1.14.123l2.36-2.36c-.978-.711-2.188-1.133-3.5-1.133-3.313 0-6 2.687-6 6 0 1.276.393 2.447 1.053 3.427l2.32-2.32c1.141-1.631 1.813-3.61 1.813-5.747 0-5.523 4.477-10 10-10s10 4.477 10 10c0 2.137-.672 4.116-1.813 5.747l-2.32-2.32c.66-.98 1.053-2.151 1.053-3.427 0-3.313-2.687-6-6-6-1.276 0-2.447.393-3.427 1.053l2.32 2.32c.98-.66 2.151-1.053 3.427-1.053 3.313 0 6 2.687 6 6 0 1.276-.393 2.447-1.053 3.427l-2.32-2.32c1.141-1.631 1.813-3.61 1.813-5.747z"/></svg>
+          GOOGLE+ Sayfamız
+        </a>
+        <a href="#" class="flex items-center gap-2 text-lg text-gray-900 hover:text-blue-700 font-semibold">
+          <svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+          LINKEDIN Sayfamız
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alt Bilgi Kutusu (Hakkımızda, İletişim, Harita + Footer metni) -->
+  <footer class="bg-gray-800 text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-10 md:flex md:justify-between md:items-start gap-24">
+      <!-- Hakkımızda -->
+      <div class="md:w-1/3 text-base sm:text-lg leading-relaxed mb-8 md:mb-0 md:text-left md:pl-8">
+        <h3 class="font-semibold text-xl sm:text-2xl mb-5">Hakkımızda</h3>
+        Karadenizliler Kültür ve Yardımlaşma Derneği, Karadeniz bölgesinin zengin kültürel mirasını yaşatmak, bu mirası gelecek nesillere aktarmak ve hemşehrilerimiz arasında güçlü bir dayanışma ağı kurmak amacıyla kurulmuş gönüllü bir sivil toplum kuruluşudur. Derneğimiz, Karadeniz’in sadece coğrafi güzelliklerini değil; aynı zamanda insanının mertliğini, misafirperverliğini, çalışkanlığını ve dayanışma duygusunu yaşatmayı görev edinmiştir.
+        <a href="hakkimizda.html" class="text-green-300 hover:underline ml-1">...devamı</a>
+      </div>
+      <!-- İletişim Bilgileri -->
+      <div class="md:w-1/3 text-base sm:text-lg mb-8 md:mb-0 md:text-left">
+        <h3 class="font-semibold text-xl sm:text-2xl mb-5 flex items-center gap-2 justify-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 4v1m-7-2v-1a4 4 0 014-4h1a4 4 0 014 4v1"></path></svg>
+          İletişim Bilgilerimiz
+        </h3>
+        <ul class="space-y-2 md:text-left">
+          <li><strong>Adres:</strong>  Ankara</li>
+          <li><strong>Tel:</strong> (0000) 000 00 00</li>
+          <li><strong>Tel:</strong> (0000) 000 00 00</li>
+          <li><strong>E-Posta:</strong> info@karder.com </li>
+        </ul>
+      </div>
+      <!-- Harita -->
+      <div class="md:w-1/3 md:text-left md:pr-8">
+        <h3 class="font-semibold text-xl sm:text-2xl mb-3 flex items-center gap-2 justify-start">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m0-10l-4-4-4 4"></path></svg>
+          Ulaşım Haritası
+        </h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3071.481748777758!2d32.85313421526374!3d39.91329977942366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348d2a749ffbf%3A0xd6f7f2046797c134!2s%C4%B0nk%C4%B1lap%20Sk.%2018%2C%2006420%20%C3%87ankaya%2FAnkara!5e0!3m2!1str!2str!4v1687580534979!5m2!1str!2str" 
+          width="100%" height="240" style="border:0; border-radius:0.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-gray-600 flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 py-3 text-xs text-gray-400 gap-2">
+      <span class="text-lg font-semibold text-gray-300">© 2025 KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ - Tüm Hakları Saklıdır.</span>
+    </div>
+  </footer>
+
+<script>
+  // Footer için güncel yılı ekle
+  // Bu durumda footer yazısı artık içerde olduğu için kaldırdım.
+</script>
+</body>
+</html>
