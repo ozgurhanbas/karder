@@ -9,17 +9,17 @@
 
 <body id="top" class="bg-gray-900 text-white">
   <!-- Slaytlı Arka Plan ve Üst Menü -->
-  <div id="slideshow" class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1000" style="background-image: url('Fotograflar/trabzon.jpg');">
+  <div id="slideshow" class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1000" style="background-image: url('trabzon.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
     <header class="relative z-10" role="banner">
       <div class="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-4 gap-4 md:gap-6">
         <!-- Logo ve Başlık -->
-        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="60" class="flex-shrink-0 w-12 md:w-[75px]" />
-          <div class="text-center sm:text-left min-w-0">
-            <h1 class="text-lg md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
-            <p class="text-xs md:text-lg lg:text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px] md:max-w-xs lg:max-w-md">
+        <div class="flex flex-row items-center space-x-2 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
+          <img src="Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="48" class="flex-shrink-0 w-10 md:w-[75px]" />
+          <div class="text-left min-w-0">
+            <h1 class="text-base md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
+            <p class="text-[10px] md:text-base lg:text-lg whitespace-normal break-words">
               KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ
             </p>
           </div>
@@ -27,7 +27,7 @@
 
         <!-- Hamburger Menü (Mobil) -->
         <div class="md:hidden flex items-center">
-          <button id="mobile-menu-button" class="text-white focus:outline-none" aria-label="Menüyü Aç/Kapat">
+          <button id="mobile-menu-button" class="text-white focus:outline-none absolute top-5 right-5 z-40" aria-label="Menüyü Aç/Kapat">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -72,17 +72,34 @@
           <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
         </nav>
         <!-- Mobil Menü İçeriği -->
-        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center text-2xl space-y-8">
-          <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
-          <a href="index.html" class="hover:underline">ANA SAYFA</a>
-          <a href="hakkimizda.html" class="hover:underline">Hakkımızda</a>
-          <a href="tarihce.html" class="hover:underline">Tarihçemiz</a>
-          <a href="yonetim.html" class="hover:underline">Yönetim Kadrosu</a>
-          <a href="haberler.html" class="hover:underline">HABERLER/DUYURULAR</a>
-          <a href="etkinlikler.html" class="hover:underline">ETKİNLİKLERİMİZ</a>
-          <a href="resim-galerisi.html" class="hover:underline">Resim Galerisi</a>
-          <a href="video-galerisi.html" class="hover:underline">Video Galerisi</a>
-          <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center px-4">
+          <div class="bg-gray-900 rounded-lg w-11/12 max-w-xs flex flex-col items-start py-8 px-4 space-y-2 relative">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">&times;</button>
+            <a href="index.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">ANA SAYFA</a>
+            <div class="w-full">
+              <button id="mobile-dernegimiz-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none text-left">
+                <span>DERNEĞİMİZ</span>
+                <svg id="mobile-dernegimiz-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-dernegimiz-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="hakkimizda.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Hakkımızda</a>
+                <a href="yonetim.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Yönetim Kadrosu</a>
+              </div>
+            </div>
+            <a href="haberler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">HABERLER/DUYURULAR</a>
+            <a href="etkinlikler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">ETKİNLİKLERİMİZ</a>
+            <div class="w-full">
+              <button id="mobile-galeri-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none text-left">
+                <span>GALERİLER</span>
+                <svg id="mobile-galeri-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-galeri-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="resim-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Resim Galerisi</a>
+                <a href="video-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Video Galerisi</a>
+              </div>
+            </div>
+            <a href="iletisim.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">İLETİŞİM</a>
+          </div>
         </div>
       </header>
 
@@ -94,12 +111,12 @@
 
   <script>
     const fotograflar = [
-      "Fotograflar/trabzon.jpg",
-      "Fotograflar/rize.jpg",
-      "Fotograflar/ordu.jpg",
-      "Fotograflar/giresun.jpg",
-      "Fotograflar/kastamonu.jpg",
-      "Fotograflar/samsun.jpg"
+      "trabzon.jpg",
+      "rize.jpg",
+      "ordu.jpg",
+      "giresun.jpg",
+      "kastamonu.jpg",
+      "samsun.jpg"
     ];
 
     let index = 0;
@@ -177,7 +194,7 @@
       <!-- Başkan kutusu -->
       <div class="flex justify-center mb-8">
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center max-w-xs w-full">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Başkan" class="w-32 h-32 rounded-lg mb-4 border-4 border-green-300 object-cover shadow-lg" />
+          <img src="Kar-der-Logo.png" alt="Başkan" class="w-32 h-32 rounded-lg mb-4 border-4 border-green-300 object-cover shadow-lg" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Ahmet Yılmaz</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Başkan</p>
         </div>
@@ -185,12 +202,12 @@
       <!-- Diğer yönetim üyeleri -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 justify-center w-full">
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Genel Başkan Vekili" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Genel Başkan Vekili" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Mehmet Demir</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Genel Başkan Vekili</p>
         </div>
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Genel Başkan Vekili" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Genel Başkan Vekili" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Ayşe Kaya</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Genel Başkan Vekili</p>
         </div>
@@ -198,7 +215,7 @@
       <!-- Genel Sayman Yardımcı tek başına -->
       <div class="flex justify-center mt-8">
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center max-w-xs w-full">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Genel Sayman Yardımcı" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Genel Sayman Yardımcı" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Fatma Çelik</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Genel Sayman Yardımcı</p>
         </div>
@@ -206,17 +223,17 @@
       <!-- Diğer üyeler -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center w-full mt-8">
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Mustafa Şahin</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Eğitimden Sorumlu Başkan<br>Üye</p>
         </div>
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Zeynep Aksoy</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Kültür ve Sanattan Sorumlu Başkan<br>Üye</p>
         </div>
         <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col items-center">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
+          <img src="Kar-der-Logo.png" alt="Üye" class="w-24 h-24 rounded-lg mb-4 border-4 border-green-300 object-cover" />
           <h3 class="text-3xl font-bold text-emerald-800 mb-2 text-center">Ali Vural</h3>
           <p class="text-lg text-gray-900 mb-4 text-center">Sosyal İşlerden Sorumlu Başkan<br>Üye</p>
         </div>
@@ -256,8 +273,8 @@
           width="100%" height="240" style="border:0; border-radius:0.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-    <div class="border-t border-gray-600 flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 py-3 text-xs text-gray-400 gap-2">
-      <span>© 2025 KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ - Tüm Hakları Saklıdır.</span>
+    <div class="border-t border-gray-600 flex flex-col sm:flex-row justify-center items-center px-2 sm:px-6 py-3 text-xs text-gray-400 gap-2">
+      <span class="text-xs font-semibold text-gray-300 text-center">© 2025 KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ -Tüm Hakları Saklıdır.</span>
     </div>
   </footer>
 

@@ -9,17 +9,17 @@
 
 <body id="top" class="bg-gray-900 text-white">
   <!-- Slaytlı Arka Plan ve Üst Menü -->
-  <div id="slideshow" class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1000" style="background-image: url('Fotograflar/trabzon.jpg');">
+  <div id="slideshow" class="relative bg-cover bg-center h-[300px] md:h-[400px] lg:h-[500px] transition-all duration-1000" style="background-image: url('trabzon.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
     <header class="relative z-10" role="banner">
       <div class="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-4 gap-4 md:gap-6">
         <!-- Logo ve Başlık -->
-        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
-          <img src="Fotograflar/Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="60" class="flex-shrink-0 w-12 md:w-[75px]" />
-          <div class="text-center sm:text-left min-w-0">
-            <h1 class="text-lg md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
-            <p class="text-xs md:text-lg lg:text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px] md:max-w-xs lg:max-w-md">
+        <div class="flex flex-row items-center space-x-2 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
+          <img src="Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="48" class="flex-shrink-0 w-10 md:w-[75px]" />
+          <div class="text-left min-w-0">
+            <h1 class="text-base md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
+            <p class="text-[10px] md:text-base lg:text-lg whitespace-normal break-words">
               KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ
             </p>
           </div>
@@ -27,7 +27,7 @@
 
         <!-- Hamburger Menü (Mobil) -->
         <div class="md:hidden flex items-center">
-          <button id="mobile-menu-button" class="text-white focus:outline-none" aria-label="Menüyü Aç/Kapat">
+          <button id="mobile-menu-button" class="text-white focus:outline-none absolute top-5 right-5 z-40" aria-label="Menüyü Aç/Kapat">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -72,17 +72,34 @@
           <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
         </nav>
         <!-- Mobil Menü İçeriği -->
-        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center text-2xl space-y-8">
-          <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
-          <a href="index.html" class="hover:underline">ANA SAYFA</a>
-          <a href="hakkimizda.html" class="hover:underline">Hakkımızda</a>
-          <a href="tarihce.html" class="hover:underline">Tarihçemiz</a>
-          <a href="yonetim.html" class="hover:underline">Yönetim Kadrosu</a>
-          <a href="haberler.html" class="hover:underline">HABERLER/DUYURULAR</a>
-          <a href="etkinlikler.html" class="hover:underline">ETKİNLİKLERİMİZ</a>
-          <a href="resim-galerisi.html" class="hover:underline">Resim Galerisi</a>
-          <a href="video-galerisi.html" class="hover:underline">Video Galerisi</a>
-          <a href="iletisim.html" class="hover:underline">İLETİŞİM</a>
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center px-4">
+          <div class="bg-gray-900 rounded-lg w-11/12 max-w-xs flex flex-col items-start py-8 px-4 space-y-2 relative">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">&times;</button>
+            <a href="index.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">ANA SAYFA</a>
+            <div class="w-full">
+              <button id="mobile-dernegimiz-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none text-left">
+                <span>DERNEĞİMİZ</span>
+                <svg id="mobile-dernegimiz-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-dernegimiz-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="hakkimizda.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Hakkımızda</a>
+                <a href="yonetim.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Yönetim Kadrosu</a>
+              </div>
+            </div>
+            <a href="haberler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">HABERLER/DUYURULAR</a>
+            <a href="etkinlikler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">ETKİNLİKLERİMİZ</a>
+            <div class="w-full">
+              <button id="mobile-galeri-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none text-left">
+                <span>GALERİLER</span>
+                <svg id="mobile-galeri-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-galeri-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="resim-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Resim Galerisi</a>
+                <a href="video-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition text-left">Video Galerisi</a>
+              </div>
+            </div>
+            <a href="iletisim.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-left hover:bg-gray-800 transition">İLETİŞİM</a>
+          </div>
         </div>
       </header>
 
@@ -94,12 +111,12 @@
 
   <script>
     const fotograflar = [
-      "Fotograflar/trabzon.jpg",
-      "Fotograflar/rize.jpg",
-      "Fotograflar/ordu.jpg",
-      "Fotograflar/giresun.jpg",
-      "Fotograflar/kastamonu.jpg",
-      "Fotograflar/samsun.jpg"
+      "trabzon.jpg",
+      "rize.jpg",
+      "ordu.jpg",
+      "giresun.jpg",
+      "kastamonu.jpg",
+      "samsun.jpg"
     ];
 
     let index = 0;
@@ -156,17 +173,34 @@
     mobileMenuButton.addEventListener('click', () => {
       mobileMenu.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      if (buttonsContainer) buttonsContainer.style.display = 'none';
     });
     closeMobileMenu.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
       document.body.style.overflow = '';
+      if (buttonsContainer) buttonsContainer.style.display = '';
     });
     // Menüden bir linke tıklanınca menüyü kapat
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
         document.body.style.overflow = '';
+        if (buttonsContainer) buttonsContainer.style.display = '';
       });
+    });
+    const dernegimizToggle = document.getElementById('mobile-dernegimiz-toggle');
+    const dernegimizSubmenu = document.getElementById('mobile-dernegimiz-submenu');
+    const dernegimizArrow = document.getElementById('mobile-dernegimiz-arrow');
+    dernegimizToggle.addEventListener('click', () => {
+      dernegimizSubmenu.classList.toggle('hidden');
+      dernegimizArrow.classList.toggle('rotate-180');
+    });
+    const galeriToggle = document.getElementById('mobile-galeri-toggle');
+    const galeriSubmenu = document.getElementById('mobile-galeri-submenu');
+    const galeriArrow = document.getElementById('mobile-galeri-arrow');
+    galeriToggle.addEventListener('click', () => {
+      galeriSubmenu.classList.toggle('hidden');
+      galeriArrow.classList.toggle('rotate-180');
     });
   </script>
 
@@ -175,103 +209,58 @@
   <section class="bg-white w-full p-8">
     <main class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Etkinliklerimiz</h2>
-      <div id="etkinlikler-container"></div>
-      <div id="pagination" class="flex justify-center mt-8 space-x-2"></div>
-      <script>
-        const etkinlikler = [
-          {
-            baslik: "Bahar Şenliği",
-            aciklama: "Her yıl düzenlenen geleneksel bahar şenliğimizde Karadeniz kültürü doyasıya yaşanıyor.",
-            tarih: "20.05.2024"
-          },
-          {
-            baslik: "Horon Gecesi",
-            aciklama: "Yöresel sanatçılar eşliğinde horon gecesi ve eğlence programı.",
-            tarih: "10.04.2024"
-          },
-          {
-            baslik: "Kültür Gezisi",
-            aciklama: "Karadeniz'in doğal ve tarihi güzelliklerine düzenlenen kültür gezisi.",
-            tarih: "25.03.2024"
-          },
-          {
-            baslik: "Yöresel Yemek Günü",
-            aciklama: "Karadeniz mutfağının eşsiz lezzetlerinin sunulduğu yemek günü.",
-            tarih: "15.03.2024"
-          },
-          {
-            baslik: "Çocuklar İçin Tiyatro",
-            aciklama: "Çocuklara yönelik ücretsiz tiyatro gösterisi ve atölye çalışmaları.",
-            tarih: "01.03.2024"
-          },
-          {
-            baslik: "Kadınlar Günü Buluşması",
-            aciklama: "8 Mart Dünya Kadınlar Günü'ne özel etkinlikler ve söyleşiler.",
-            tarih: "08.03.2024"
-          },
-          {
-            baslik: "Burs Tanıtım Toplantısı",
-            aciklama: "Üniversite öğrencilerine yönelik burs imkanlarının tanıtıldığı toplantı.",
-            tarih: "20.02.2024"
-          },
-          {
-            baslik: "Fotoğraf Sergisi",
-            aciklama: "Karadeniz'in güzelliklerini yansıtan fotoğraf sergisi.",
-            tarih: "10.02.2024"
-          },
-          {
-            baslik: "Gençlik Forumu",
-            aciklama: "Genç üyelerimizin katılımıyla düzenlenen forum ve atölye çalışmaları.",
-            tarih: "25.01.2024"
-          },
-          {
-            baslik: "Yeni Yıl Kutlaması",
-            aciklama: "Tüm üyelerimizin katılımına açık yeni yıl kutlama programı.",
-            tarih: "31.12.2023"
-          }
-        ];
-        const etkinliklerPerPage = 6;
-        let currentPage = 1;
-        function renderEtkinlikler(page) {
-          const container = document.getElementById('etkinlikler-container');
-          container.innerHTML = '';
-          const start = (page - 1) * etkinliklerPerPage;
-          const end = start + etkinliklerPerPage;
-          const etkinliklerToShow = etkinlikler.slice(start, end);
-          const grid = document.createElement('div');
-          grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full';
-          etkinliklerToShow.forEach(etkinlik => {
-            const card = document.createElement('div');
-            card.className = 'bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col';
-            card.innerHTML = `
-              <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">${etkinlik.baslik}</h3>
-              <p class="text-lg text-gray-900 mb-4 text-center">${etkinlik.aciklama}</p>
-              <span class="text-sm text-gray-600 mt-auto">${etkinlik.tarih}</span>
-            `;
-            grid.appendChild(card);
-          });
-          container.appendChild(grid);
-        }
-        function renderPagination() {
-          const pageCount = Math.ceil(etkinlikler.length / etkinliklerPerPage);
-          const pagination = document.getElementById('pagination');
-          pagination.innerHTML = '';
-          for (let i = 1; i <= pageCount; i++) {
-            const btn = document.createElement('button');
-            btn.textContent = i;
-            btn.className = `px-4 py-2 rounded-full font-bold border-2 transition ${i === currentPage ? 'bg-green-700 text-white border-green-700' : 'bg-white text-green-700 border-green-700 hover:bg-green-700 hover:text-white'}`;
-            btn.addEventListener('click', () => {
-              currentPage = i;
-              renderEtkinlikler(currentPage);
-              renderPagination();
-            });
-            pagination.appendChild(btn);
-          }
-        }
-        // İlk yüklemede göster
-        renderEtkinlikler(currentPage);
-        renderPagination();
-      </script>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full">
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Bahar Şenliği</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Her yıl düzenlenen geleneksel bahar şenliğimizde Karadeniz kültürü doyasıya yaşanıyor.</p>
+          <span class="text-sm text-gray-600 mt-auto">20.05.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Horon Gecesi</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Yöresel sanatçılar eşliğinde horon gecesi ve eğlence programı.</p>
+          <span class="text-sm text-gray-600 mt-auto">10.04.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Kültür Gezisi</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Karadeniz'in doğal ve tarihi güzelliklerine düzenlenen kültür gezisi.</p>
+          <span class="text-sm text-gray-600 mt-auto">25.03.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Yöresel Yemek Günü</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Karadeniz mutfağının eşsiz lezzetlerinin sunulduğu yemek günü.</p>
+          <span class="text-sm text-gray-600 mt-auto">15.03.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Çocuklar İçin Tiyatro</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Çocuklara yönelik ücretsiz tiyatro gösterisi ve atölye çalışmaları.</p>
+          <span class="text-sm text-gray-600 mt-auto">01.03.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Kadınlar Günü Buluşması</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">8 Mart Dünya Kadınlar Günü'ne özel etkinlikler ve söyleşiler.</p>
+          <span class="text-sm text-gray-600 mt-auto">08.03.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Burs Tanıtım Toplantısı</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Üniversite öğrencilerine yönelik burs imkanlarının tanıtıldığı toplantı.</p>
+          <span class="text-sm text-gray-600 mt-auto">20.02.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Fotoğraf Sergisi</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Karadeniz'in güzelliklerini yansıtan fotoğraf sergisi.</p>
+          <span class="text-sm text-gray-600 mt-auto">10.02.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Gençlik Forumu</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Genç üyelerimizin katılımıyla düzenlenen forum ve atölye çalışmaları.</p>
+          <span class="text-sm text-gray-600 mt-auto">25.01.2024</span>
+        </div>
+        <div class="bg-blue-50 rounded-lg shadow-lg p-6 flex flex-col">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 text-center">Yeni Yıl Kutlaması</h3>
+          <p class="text-lg text-gray-900 mb-4 text-center">Tüm üyelerimizin katılımına açık yeni yıl kutlama programı.</p>
+          <span class="text-sm text-gray-600 mt-auto">31.12.2023</span>
+        </div>
+      </div>
     </main>
   </section>
   <!-- Etkinlikler Sonu -->
@@ -308,8 +297,8 @@
           width="100%" height="240" style="border:0; border-radius:0.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-    <div class="border-t border-gray-600 flex flex-col sm:flex-row justify-center items-center px-4 sm:px-6 py-3 text-xs text-gray-400 gap-2">
-      <span class="text-lg font-semibold text-gray-300">© 2025 KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ - Tüm Hakları Saklıdır.</span>
+    <div class="border-t border-gray-600 flex flex-col sm:flex-row justify-center items-center px-2 sm:px-6 py-3 text-xs text-gray-400 gap-2">
+      <span class="text-xs font-semibold text-gray-300 text-center">© 2025 KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ -Tüm Hakları Saklıdır.</span>
     </div>
   </footer>
 
