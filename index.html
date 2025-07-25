@@ -15,10 +15,10 @@
     <header class="relative z-10" role="banner">
       <div class="flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-4 gap-4 md:gap-6">
         <!-- Logo ve Başlık -->
-        <div class="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
-          <img src="Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="60" class="flex-shrink-0 w-12 md:w-[75px]" />
-          <div class="text-center sm:text-left min-w-0">
-            <h1 class="text-lg md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
+        <div class="flex flex-row items-center space-x-2 sm:space-x-4 flex-shrink-0 min-w-[100px] max-w-full">
+          <img src="Kar-der-Logo.png" alt="Karadenizliler Derneği Logo" width="48" class="flex-shrink-0 w-10 md:w-[75px]" />
+          <div class="text-left min-w-0">
+            <h1 class="text-base md:text-2xl lg:text-3xl font-bold break-words">KAR-DER</h1>
             <p class="text-xs md:text-lg lg:text-lg whitespace-normal break-words">
               KARADENİZLİLER KÜLTÜR VE YARDIMLAŞMA DERNEĞİ
             </p>
@@ -73,16 +73,31 @@
         </nav>
         <!-- Mobil Menü İçeriği -->
         <div id="mobile-menu" class="md:hidden fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex-col items-center justify-center px-4">
-          <div class="bg-gray-900 rounded-lg w-11/12 max-w-xs flex flex-col items-center py-8 px-4 space-y-4">
+          <div class="bg-gray-900 rounded-lg w-11/12 max-w-xs flex flex-col items-center py-8 px-4 space-y-4 relative">
             <button id="close-mobile-menu" class="absolute top-6 right-6 text-white text-3xl bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">&times;</button>
             <a href="index.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">ANA SAYFA</a>
-            <a href="hakkimizda.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">Hakkımızda</a>
-            <a href="tarihce.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">Tarihçemiz</a>
-            <a href="yonetim.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">Yönetim Kadrosu</a>
+            <div class="w-full">
+              <button id="mobile-dernegimiz-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none">
+                <span>DERNEĞİMİZ</span>
+                <svg id="mobile-dernegimiz-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-dernegimiz-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="hakkimizda.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition">Hakkımızda</a>
+                <a href="yonetim.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition">Yönetim Kadrosu</a>
+              </div>
+            </div>
             <a href="haberler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">HABERLER/DUYURULAR</a>
             <a href="etkinlikler.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">ETKİNLİKLERİMİZ</a>
-            <a href="resim-galerisi.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">Resim Galerisi</a>
-            <a href="video-galerisi.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">Video Galerisi</a>
+            <div class="w-full">
+              <button id="mobile-galeri-toggle" class="flex justify-between items-center w-full text-lg py-2 px-4 rounded hover:bg-gray-800 transition focus:outline-none">
+                <span>GALERİLER</span>
+                <svg id="mobile-galeri-arrow" class="w-4 h-4 ml-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div id="mobile-galeri-submenu" class="flex-col space-y-2 pl-6 mt-1 hidden">
+                <a href="resim-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition">Resim Galerisi</a>
+                <a href="video-galerisi.html" class="block text-base py-1 px-2 rounded hover:bg-gray-800 transition">Video Galerisi</a>
+              </div>
+            </div>
             <a href="iletisim.html" class="hover:underline text-lg py-2 px-4 rounded w-full text-center hover:bg-gray-800 transition">İLETİŞİM</a>
           </div>
         </div>
@@ -169,6 +184,21 @@
         mobileMenu.classList.add('hidden');
         document.body.style.overflow = '';
       });
+    });
+    // Mobil menüde açılır alt menüler (accordion)
+    const dernegimizToggle = document.getElementById('mobile-dernegimiz-toggle');
+    const dernegimizSubmenu = document.getElementById('mobile-dernegimiz-submenu');
+    const dernegimizArrow = document.getElementById('mobile-dernegimiz-arrow');
+    dernegimizToggle.addEventListener('click', () => {
+      dernegimizSubmenu.classList.toggle('hidden');
+      dernegimizArrow.classList.toggle('rotate-180');
+    });
+    const galeriToggle = document.getElementById('mobile-galeri-toggle');
+    const galeriSubmenu = document.getElementById('mobile-galeri-submenu');
+    const galeriArrow = document.getElementById('mobile-galeri-arrow');
+    galeriToggle.addEventListener('click', () => {
+      galeriSubmenu.classList.toggle('hidden');
+      galeriArrow.classList.toggle('rotate-180');
     });
   </script>
 
