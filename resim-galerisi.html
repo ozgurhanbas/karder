@@ -192,68 +192,39 @@
   <section class="bg-white w-full p-8">
     <main class="max-w-7xl mx-auto">
       <h2 class="text-4xl font-extrabold text-green-700 mb-8 text-center">Resim Galerisi</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <div class="flex flex-col items-center">
-          <img src="trabzon.jpg" alt="Trabzon" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Trabzon</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="rize.jpg" alt="Rize" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Rize</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="ordu.jpg" alt="Ordu" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Ordu</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="giresun.jpg" alt="Giresun" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Giresun</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="kastamonu.jpg" alt="Kastamonu" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Kastamonu</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="samsun.jpg" alt="Samsun" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
-          <span class="text-lg text-gray-900 font-semibold">Samsun</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="Kar-der-Logo.png" alt="Dernek Logosu" class="rounded-lg shadow-lg w-full h-48 object-contain bg-white mb-2 p-4" />
-          <span class="text-lg text-gray-900 font-semibold">Dernek Logosu</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="logo.jpg" alt="Logo" class="rounded-lg shadow-lg w-full h-48 object-contain bg-white mb-2 p-4" />
-          <span class="text-lg text-gray-900 font-semibold">Logo</span>
-        </div>
+      <div id="galeri-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Galeri kartları burada olacak -->
       </div>
+      <div id="galeri-pagination" class="flex justify-center mt-8 space-x-2"></div>
     </main>
   </section>
   <!-- Resim Galerisi Sonu -->
 
   <!-- Alt Bilgi Kutusu (Hakkımızda, İletişim, Harita + Footer metni) -->
   <footer class="bg-gray-800 text-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-10 md:flex md:justify-between md:items-start gap-24">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 py-8 md:py-10 flex flex-col md:flex-row md:justify-between md:items-start gap-8 md:gap-24">
       <!-- Hakkımızda -->
       <div class="md:w-1/3 text-base sm:text-lg leading-relaxed mb-8 md:mb-0 md:text-left md:pl-8">
         <h3 class="font-semibold text-xl sm:text-2xl mb-5">Hakkımızda</h3>
-        Karadenizliler Kültür ve Yardımlaşma Derneği, Karadeniz kültürünü yaşatmak ve hemşehrilerimiz arasında dayanışmayı güçlendirmek amacıyla kurulmuş gönüllü bir sivil toplum kuruluşudur. <a href="hakkimizda.html" class="text-green-300 hover:underline ml-1">...devamı</a>
+        Karadenizliler Kültür ve Yardımlaşma Derneği, Karadeniz kültürünü yaşatmak ve hemşehrilerimiz arasında dayanışmayı güçlendirmek amacıyla kurulmuş gönüllü bir sivil toplum kuruluşudur.
+        <a href="hakkimizda.html" class="text-green-300 hover:underline ml-1">...devamı</a>
       </div>
       <!-- İletişim Bilgileri -->
       <div class="md:w-1/3 text-base sm:text-lg mb-8 md:mb-0 md:text-left">
-        <h3 class="font-semibold text-xl sm:text-2xl mb-5 flex items-center gap-2 justify-start">
+        <h3 class="font-semibold text-lg sm:text-2xl mb-5 flex items-center gap-2 justify-start">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1 4v1m-7-2v-1a4 4 0 014-4h1a4 4 0 014 4v1"></path></svg>
           İletişim Bilgilerimiz
         </h3>
         <ul class="space-y-2 md:text-left">
-          <li><strong>Adres:</strong>  Ankara</li>
-          <li><strong>Tel:</strong> (0000) 000 00 00</li>
-          <li><strong>Tel:</strong> (0000) 000 00 00</li>
-          <li><strong>E-Posta:</strong> info@karder.com </li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 text-gray-400 mr-1 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0h6"/></svg> <strong>Adres:</strong> Ankara</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 text-gray-400 mr-1 mb-1" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg> <strong>Tel:</strong> (0000) 000 00 00</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 text-gray-400 mr-1 mb-1" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5A1 1 0 013 3.5h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg> <strong>Tel:</strong> (0000) 000 00 00</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5 text-gray-400 mr-1 mb-1" viewBox="0 0 24 24" fill="currentColor"><path d="M2.25 6.75A2.25 2.25 0 014.5 4.5h15a2.25 2.25 0 012.25 2.25v10.5A2.25 2.25 0 0119.5 19.5h-15A2.25 2.25 0 012.25 17.25V6.75zm1.5 0v.638l8.25 5.512 8.25-5.512V6.75a.75.75 0 00-.75-.75h-15a.75.75 0 00-.75.75zm16.5 1.862l-7.72 5.16a1.5 1.5 0 01-1.56 0l-7.72-5.16V17.25c0 .414.336.75.75.75h15a.75.75 0 00.75-.75V8.612z"/></svg> <strong>E-Posta:</strong> info@karder.com </li>
         </ul>
       </div>
       <!-- Harita -->
       <div class="md:w-1/3 md:text-left md:pr-8">
-        <h3 class="font-semibold text-xl sm:text-2xl mb-3 flex items-center gap-2 justify-start">
+        <h3 class="font-semibold text-lg sm:text-2xl mb-3 flex items-center gap-2 justify-start">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m0-10l-4-4-4 4"></path></svg>
           Ulaşım Haritası
         </h3>
@@ -270,6 +241,54 @@
 <script>
   // Footer için güncel yılı ekle
   // Bu durumda footer yazısı artık içerde olduğu için kaldırdım.
+</script>
+<script>
+  const resimler = [
+    { src: "trabzon.jpg", alt: "Trabzon" },
+    { src: "rize.jpg", alt: "Rize" },
+    { src: "ordu.jpg", alt: "Ordu" },
+    { src: "giresun.jpg", alt: "Giresun" },
+    { src: "kastamonu.jpg", alt: "Kastamonu" },
+    { src: "samsun.jpg", alt: "Samsun" },
+    { src: "Kar-der-Logo.png", alt: "Dernek Logosu" },
+    { src: "logo.jpg", alt: "Logo" }
+  ];
+  const galeriContainer = document.getElementById('galeri-container');
+  const galeriPagination = document.getElementById('galeri-pagination');
+  const resimlerPerPage = 6;
+  let galeriCurrentPage = 1;
+  function renderGaleri(page) {
+    galeriContainer.innerHTML = '';
+    const start = (page - 1) * resimlerPerPage;
+    const end = start + resimlerPerPage;
+    const resimlerToShow = resimler.slice(start, end);
+    resimlerToShow.forEach(resim => {
+      const div = document.createElement('div');
+      div.className = 'flex flex-col items-center';
+      div.innerHTML = `
+        <img src="${resim.src}" alt="${resim.alt}" class="rounded-lg shadow-lg w-full h-48 object-cover mb-2" />
+        <span class="text-lg text-gray-900 font-semibold">${resim.alt}</span>
+      `;
+      galeriContainer.appendChild(div);
+    });
+  }
+  function renderGaleriPagination() {
+    galeriPagination.innerHTML = '';
+    const pageCount = Math.ceil(resimler.length / resimlerPerPage);
+    for (let i = 1; i <= pageCount; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = `px-4 py-2 rounded-full font-bold border-2 border-green-700 mx-1 ${i === galeriCurrentPage ? 'bg-green-700 text-white' : 'bg-white text-green-700 hover:bg-green-100'}`;
+      btn.addEventListener('click', () => {
+        galeriCurrentPage = i;
+        renderGaleri(galeriCurrentPage);
+        renderGaleriPagination();
+      });
+      galeriPagination.appendChild(btn);
+    }
+  }
+  renderGaleri(galeriCurrentPage);
+  renderGaleriPagination();
 </script>
 </body>
 </html>
